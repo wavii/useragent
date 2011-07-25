@@ -34,18 +34,7 @@ class UserAgent
     end
 
     def eql?(other)
-      other.is_a?(self.class) && to_s == other.to_s
-    end
-
-    def ==(other)
-      case other
-      when Version
-        eql?(other)
-      when String
-        eql?(self.class.new(other))
-      else
-        false
-      end
+      self == other
     end
 
     def <=>(other)
